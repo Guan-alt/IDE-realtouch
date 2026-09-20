@@ -1,0 +1,73 @@
+# ========================================
+# 智能门锁自动化测试配置文件
+# ========================================
+
+# Appium 服务配置
+appium:
+  host: "127.0.0.1"
+  port: 4723
+  # 隐式等待时间（秒）
+  implicit_wait: 10
+  # 元素查找默认超时时间（秒）
+  element_wait_timeout: 15
+
+# Android 设备配置
+android:
+  # 设备序列号（adb devices 查看）
+  device_name: "your_device_serial"
+  # Android 版本
+  platform_version: "13"
+  # 自动化引擎
+  automation_name: "UiAutomator2"
+  # 不重置应用状态
+  no_reset: true
+  # 不停止应用
+  dont_stop_app_on_reset: true
+
+# 自研App配置
+self_app:
+  app_package: "com.yourcompany.smartlock"
+  app_activity: "com.yourcompany.smartlock.MainActivity"
+  # 测试设备名称（App中显示的门锁名）
+  test_lock_name: "测试门锁_001"
+
+# 米家App配置
+mijia_app:
+  app_package: "com.xiaomi.smarthome"
+  app_activity: "com.xiaomi.smarthome.MainActivity"
+  # 测试设备名称（米家首页显示的门锁名）
+  test_lock_name: "测试门锁_001"
+
+# 门锁串口配置
+serial:
+  # 串口号（Windows: COM3, Linux/Mac: /dev/ttyUSB0）
+  port: "COM3"
+  # 波特率
+  baudrate: 115200
+  # 数据位
+  bytesize: 8
+  # 停止位
+  stopbits: 1
+  # 校验位
+  parity: "N"
+  # 读取超时（秒）
+  timeout: 1
+
+# 日志配置
+log:
+  level: "INFO"
+  # 日志文件目录
+  log_dir: "./reports/logs"
+  # 单个日志文件最大大小（MB）
+  max_bytes: 10
+  # 日志文件备份数
+  backup_count: 5
+
+# 测试报告配置
+report:
+  # 报告输出目录
+  report_dir: "./reports"
+  # 截图保存目录
+  screenshot_dir: "./reports/screenshots"
+  # 失败自动截图
+  screenshot_on_failure: true
